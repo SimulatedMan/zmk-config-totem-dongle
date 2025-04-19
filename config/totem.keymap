@@ -28,6 +28,15 @@
 / {
     combos { compatible = "zmk,combos"; };
 
+    behaviors {
+        apostraphe_double_quotes: apostraphe_double_quotes {
+            compatible = "zmk,behavior-tap-dance";
+            label = "APOSTRAPHE_DOUBLE_QUOTES";
+            #binding-cells = <0>;
+            bindings = <&kp APOSTROPHE>, <&kp DOUBLE_QUOTES>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -76,10 +85,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &kp ESCAPE       &kp BACKSLASH  &kp APOS   &kp SLASH         &kp LEFT_BRACE          &kp RIGHT_BRACE        &kp PLUS   &kp ASTERISK   &kp EQUAL  &kp DELETE
-        &kp EXCLAMATION  &kp QUESTION   &kp COMMA  &kp DOT           &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp MINUS  &kp COLON      &kp SEMI   &kp PERCENT
-&trans  &kp TILDE        &kp LESS_THAN  &kp PIPE   &kp GREATER_THAN  &kp LEFT_BRACKET        &kp RIGHT_BRACKET      &kp UNDER  &kp AMPERSAND  &kp AT     &kp POUND    &trans
-                                        &trans     &trans            &trans                  &trans                 &trans     &trans
+        &kp ESCAPE       &kp BACKSLASH  &apostraphe_double_quotes  &kp SLASH         &kp LEFT_BRACE          &kp RIGHT_BRACE        &kp PLUS   &kp ASTERISK   &kp EQUAL  &kp DELETE
+        &kp EXCLAMATION  &kp QUESTION   &kp COMMA                  &kp DOT           &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp MINUS  &kp COLON      &kp SEMI   &kp PERCENT
+&trans  &kp TILDE        &kp LESS_THAN  &kp PIPE                   &kp GREATER_THAN  &kp LEFT_BRACKET        &kp RIGHT_BRACKET      &kp UNDER  &kp AMPERSAND  &kp AT     &kp POUND    &trans
+                                        &trans                     &trans            &trans                  &trans                 &trans     &trans
             >;
         };
 
