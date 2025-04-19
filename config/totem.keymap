@@ -35,6 +35,41 @@
             #binding-cells = <0>;
             bindings = <&kp APOSTROPHE>, <&kp DOUBLE_QUOTES>;
         };
+
+        hml: hml {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HML";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <175>;
+            quick-tap-ms = <175>;
+            tapping-term-ms = <280>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 26 27 28 29 30 31 37 36 35 34 33 32>;
+            hold-trigger-on-release;
+        };
+
+        hmr: hmr {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMR";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <175>;
+            quick-tap-ms = <175>;
+            tapping-term-ms = <280>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <37 36 35 0 1 11 2 3 4 12 13 14 23 24 25 32 33 34 20 21 22 22 10>;
+        };
+
+        mult_caret: mult_caret {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MULT_CARET";
+            #binding-cells = <0>;
+            bindings = <&kp ASTERISK>, <&kp CARET>;
+        };
     };
 
     keymap {
@@ -59,10 +94,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                &kp Y  &kp C  &kp L    &kp M  &kp K        &kp Z          &kp F  &kp U     &kp A  &kp O
-                &kp I  &kp S  &kp R    &kp T  &kp G        &kp P          &kp N  &kp E     &kp A  &kp O
-&kp LEFT_SHIFT  &kp Q  &kp V  &kp W    &kp D  &kp J        &kp B          &kp H  &kp PLUS  &kp A  &kp X  &kp RIGHT_SHIFT
-                              &kp TAB  &mo 1  &kp SPACE    &kp BACKSPACE  &mo 2  &kp RET
+                &kp Y  &kp C            &kp L                &kp M            &kp K        &kp Z          &kp F             &kp U                    &kp A             &kp O
+                &kp I  &kp S            &kp R                &kp T            &kp G        &kp P          &kp N             &kp E                    &kp A             &kp O
+&kp LEFT_SHIFT  &kp Q  &hml LEFT_WIN V  &hml LEFT_CONTROL W  &hml LEFT_ALT D  &kp J        &kp B          &hmr RIGHT_ALT H  &hmr RIGHT_CONTROL PLUS  &hmr RIGHT_WIN A  &kp X  &kp RIGHT_SHIFT
+                                        &kp TAB              &mo 1            &kp SPACE    &kp BACKSPACE  &mo 2             &kp RET
             >;
         };
 
@@ -85,10 +120,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &kp ESCAPE       &kp BACKSLASH  &apostraphe_double_quotes  &kp SLASH         &kp LEFT_BRACE          &kp RIGHT_BRACE        &kp PLUS   &kp ASTERISK   &kp EQUAL  &kp DELETE
-        &kp EXCLAMATION  &kp QUESTION   &kp COMMA                  &kp DOT           &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp MINUS  &kp COLON      &kp SEMI   &kp PERCENT
-&trans  &kp TILDE        &kp LESS_THAN  &kp PIPE                   &kp GREATER_THAN  &kp LEFT_BRACKET        &kp RIGHT_BRACKET      &kp UNDER  &kp AMPERSAND  &kp AT     &kp POUND    &trans
-                                        &trans                     &trans            &trans                  &trans                 &trans     &trans
+        &kp ESCAPE       &kp BACKSLASH            &apostraphe_double_quotes  &kp SLASH                   &kp LEFT_BRACE          &kp RIGHT_BRACE        &kp PLUS              &mult_caret                   &kp EQUAL          &kp DELETE
+        &kp EXCLAMATION  &kp QUESTION             &kp COMMA                  &kp DOT                     &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp MINUS             &kp COLON                     &kp SEMI           &kp PERCENT
+&trans  &kp TILDE        &hml LEFT_WIN LESS_THAN  &hml LEFT_CONTROL PIPE     &hml LEFT_ALT GREATER_THAN  &kp LEFT_BRACKET        &kp RIGHT_BRACKET      &hmr RIGHT_ALT UNDER  &hmr RIGHT_CONTROL AMPERSAND  &hmr RIGHT_WIN AT  &kp POUND    &trans
+                                                  &trans                     &trans                      &trans                  &trans                 &trans                &trans
             >;
         };
 
@@ -98,20 +133,20 @@
         right_thumb_layer {
             label = "Right";
             bindings = <
-        &kp KP_MULTIPLY  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp KP_PLUS        &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP   &kp END     &trans
-        &kp NUMBER_0     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp KP_EQUAL       &kp LEFT  &kp DOWN       &kp UP_ARROW  &kp RIGHT   &kp KP_DOT
-&trans  &kp KP_DIVIDE    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp KP_SUBTRACT    &kp INS   &kp DOLLAR     &kp DOLLAR    &kp DOLLAR  &trans      &trans
-                                       &trans        &trans        &trans             &trans    &trans         &trans
+        &kp KP_MULTIPLY  &kp NUMBER_7            &kp NUMBER_8                &kp NUMBER_9            &kp KP_PLUS        &kp HOME  &kp PAGE_DOWN          &kp PAGE_UP                &kp END                &trans
+        &kp NUMBER_0     &kp NUMBER_1            &kp NUMBER_2                &kp NUMBER_3            &kp KP_EQUAL       &kp LEFT  &kp DOWN               &kp UP_ARROW               &kp RIGHT              &kp KP_DOT
+&trans  &kp KP_DIVIDE    &hml LEFT_WIN NUMBER_4  &hml LEFT_CONTROL NUMBER_5  &hml LEFT_ALT NUMBER_6  &kp KP_SUBTRACT    &kp INS   &hmr RIGHT_ALT DOLLAR  &hmr RIGHT_CONTROL DOLLAR  &hmr RIGHT_WIN DOLLAR  &trans      &trans
+                                                 &trans                      &trans                  &trans             &trans    &trans                 &trans
             >;
         };
 
         both_thumbs_layes {
             label = "Both";
             bindings = <
-        &trans   &kp F7  &kp F8  &kp F9  &trans    &trans  &trans  &trans  &trans  &trans
-        &kp F10  &kp F1  &kp F2  &kp F3  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans   &kp F4  &kp F5  &kp F6  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                         &trans  &trans  &trans    &trans  &trans  &trans
+        &trans   &kp F7            &kp F8                &kp F9            &trans    &trans  &trans            &trans                   &trans            &trans
+        &kp F10  &kp F1            &kp F2                &kp F3            &trans    &trans  &trans            &trans                   &trans            &trans
+&trans  &trans   &hml LEFT_GUI F4  &hml LEFT_CONTROL F5  &hml LEFT_ALT F6  &trans    &trans  &hmr RIGHT_ALT H  &hmr RIGHT_ALT ASTERISK  &hmr RIGHT_GUI A  &trans  &trans
+                                   &trans                &trans            &trans    &trans  &trans            &trans
             >;
         };
     };
