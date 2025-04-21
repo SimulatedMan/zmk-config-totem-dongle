@@ -94,25 +94,17 @@
             bindings = <&kp SV_ASTERISK>, <&kp SV_CARET>;
         };
 
-  //      ad_e: adaptive_e {
-  //          combatible ="zmk,behavior-antecedent-morph";
-  //          #binding-cells = <0>;
-  //          defaults = <&kp E>;
-  //          bindings = <&kp H>, <&kp X>, <&kp C>, <&kp J>, <&kp J>, <&kp J>, <&kp J>;
-  //          antecedents = <P O S T D K G>;
-  //          max-delay-ms = <250>;
-  //      };
         magic_key: magic_key {
-            combatible = "zmk, behavior-adaptive-key";
-              #binding-cells = <0>;
-              bindings = <&none>;
-              akt_ph { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp H>;};
-              akt_ox { trigger-keys = <O>; max-prior-idle-ms = <300>; bindings = <&kp X>;};
-              akt_sc { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp C>;};
-              akt_tj { trigger-keys = <T>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
-              akt_dj { trigger-keys = <D>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
-              akt_kj { trigger-keys = <K>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
-              akt_gj { trigger-keys = <G>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            akt_ph { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp H>;};
+            akt_ox { trigger-keys = <O>; max-prior-idle-ms = <300>; bindings = <&kp X>;};
+            akt_sc { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp C>;};
+            akt_tj { trigger-keys = <T>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
+            akt_dj { trigger-keys = <D>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
+            akt_kj { trigger-keys = <K>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
+            akt_gj { trigger-keys = <G>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
         };
     };
 
