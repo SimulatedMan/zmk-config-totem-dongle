@@ -21,8 +21,8 @@ manifest:
     - name: zmk-locales
       remote: joelspadin
       revision: main
-    - name: zmk-antecedent-morph
-      remote: ssbb
-      revision: v1
+    - name: zmk-adaptive-key
+      remote: urob
+      revision: main
   self:
     path: config
