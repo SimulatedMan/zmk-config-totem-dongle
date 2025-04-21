@@ -90,7 +90,7 @@
         magic_key: magic_key {
             compatible = "zmk,behavior-adaptive-key";
             #binding-cells = <0>;
-            bindings = <&kp E>;
+            bindings = <&none;
             akt_ph { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp H>;};
             akt_ox { trigger-keys = <O>; max-prior-idle-ms = <300>; bindings = <&kp X>;};
             akt_sc { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp C>;};
@@ -98,19 +98,6 @@
             akt_dj { trigger-keys = <D>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
             akt_kj { trigger-keys = <K>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
             akt_gj { trigger-keys = <G>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
-        };
-
-        hmr_magic: hmr_magic {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HMR";
-            bindings = <&kp>, <&magic_key>;
-            #binding-cells = <2>;
-            flavor = "balanced";
-            require-prior-idle-ms = <175>;
-            quick-tap-ms = <175>;
-            tapping-term-ms = <280>;
-            hold-trigger-on-release;
-            hold-trigger-key-positions = <37 36 35 0 1 11 2 3 4 12 13 14 23 24 25 32 33 34 20 21 22 22 10>;
         };
 
         mult_caret: mult_caret {
@@ -135,19 +122,19 @@
 
             // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
             //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-            //             ┃     Y     ┃     C     ┃     L     ┃     M     ┃     K     ┃   ┃     Z     ┃     F     ┃     U     ┃     Ä     ┃     Ö     ┃
+            //             ┃     Y     ┃     C     ┃     L     ┃     M     ┃     K     ┃   ┃     Z     ┃     F     ┃   MAGIC   ┃     Ä     ┃     Ö     ┃
             //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
             //             ┃     I     ┃     S     ┃     R     ┃     T     ┃     G     ┃   ┃     P     ┃     N     ┃     E     ┃     A     ┃     O     ┃
             // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-            // ┃LEFT_SHIFT ┃     Q     ┃  V LWIN   ┃  W LCTRL  ┃  D LALT   ┃     J     ┃   ┃     B     ┃  H  RALT  ┃MAGIC RCTRL┃   Å RWIN  ┃     X     ┃RIGHT_SHIFT┃
+            // ┃LEFT_SHIFT ┃     Q     ┃  V LWIN   ┃  W LCTRL  ┃  D LALT   ┃     J     ┃   ┃     B     ┃  H  RALT  ┃  U RCTRL  ┃   Å RWIN  ┃     X     ┃RIGHT_SHIFT┃
             // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
             //                                     ┃    TAB    ┃  MO_LEFT  ┃    SPC    ┃   ┃   BSPC    ┃  MO_RIGHT ┃    RET    ┃
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                &kp Y  &kp C            &kp L                &kp M            &kp K        &kp Z          &kp F             &kp U                        &kp SV_A_UMLAUT            &kp SV_O_UMLAUT
-                &kp I  &kp S            &kp R                &kp T            &kp G        &kp P          &kp N             &kp E                        &kp A                      &kp O
-&kp LEFT_SHIFT  &kp Q  &hml LEFT_WIN V  &hml LEFT_CONTROL W  &hml LEFT_ALT D  &kp J        &kp B          &hmr RIGHT_ALT H  &hmr_magic RIGHT_CONTROL 0   &hmr RIGHT_WIN SV_A_RING   &kp X           &kp RIGHT_SHIFT
+                &kp Y  &kp C            &kp L                &kp M            &kp K        &kp Z          &kp F             &magic_key             &kp SV_A_UMLAUT            &kp SV_O_UMLAUT
+                &kp I  &kp S            &kp R                &kp T            &kp G        &kp P          &kp N             &kp E                  &kp A                      &kp O
+&kp LEFT_SHIFT  &kp Q  &hml LEFT_WIN V  &hml LEFT_CONTROL W  &hml LEFT_ALT D  &kp J        &kp B          &hmr RIGHT_ALT H  &hmr RIGHT_CONTROL U   &hmr RIGHT_WIN SV_A_RING   &kp X           &kp RIGHT_SHIFT
                                         &kp TAB              &mo 1            &kp SPACE    &kp BACKSPACE  &mo 2             &kp RET
             >;
         };
