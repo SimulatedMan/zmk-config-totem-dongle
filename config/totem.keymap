@@ -95,10 +95,10 @@
         };
 
         ad_e: adaptive_e {
-            combatible: "zmk,behavior-antecedent-morph";
+            combatible ="zmk,behavior-antecedent-morph";
             #binding-cells = <0>;
-            defaults: <&kp E>;
-            bindings= <&kp H>, <&kp X>, <&kp C>, <&kp J>, <&kp J>, <&kp J>, <&kp J>;
+            defaults = <&kp E>;
+            bindings = <&kp H>, <&kp X>, <&kp C>, <&kp J>, <&kp J>, <&kp J>, <&kp J>;
             antecedents = <P O S T D K G>;
             max-delay-ms = <250>;
         };
