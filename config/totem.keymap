@@ -132,7 +132,7 @@
             bindings = <
                 &kp Y  &kp C            &kp L                &kp M            &kp K        &kp Z          &kp F             &kp U                        &kp SV_A_UMLAUT            &kp SV_O_UMLAUT
                 &kp I  &kp S            &kp R                &kp T            &kp G        &kp P          &kp N             &kp E                        &kp A                      &kp O
-&kp LEFT_SHIFT  &kp Q  &hml LEFT_WIN V  &hml LEFT_CONTROL W  &hml LEFT_ALT D  &kp J        &kp B          &hmr RIGHT_ALT H  &hmr RIGHT_CONTROL &magic_key &hmr RIGHT_WIN SV_A_RING   &kp X  &kp RIGHT_SHIFT
+&kp LEFT_SHIFT  &kp Q  &hml LEFT_WIN V  &hml LEFT_CONTROL W  &hml LEFT_ALT D  &kp J        &kp B          &hmr RIGHT_ALT H  &magic_key &hmr RIGHT_WIN SV_A_RING   &kp X  &kp RIGHT_SHIFT
                                         &kp TAB              &mo 1            &kp SPACE    &kp BACKSPACE  &mo 2             &kp RET
             >;
         };
