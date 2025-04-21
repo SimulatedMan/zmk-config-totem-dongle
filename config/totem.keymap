@@ -86,12 +86,24 @@
             hold-trigger-on-release;
             hold-trigger-key-positions = <37 36 35 0 1 11 2 3 4 12 13 14 23 24 25 32 33 34 20 21 22 22 10>;
         };
+        
+        magic_key: magic_key {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            akt_ph { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp H>;};
+            akt_ox { trigger-keys = <O>; max-prior-idle-ms = <300>; bindings = <&kp X>;};
+            akt_sc { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp C>;};
+            akt_tj { trigger-keys = <T>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
+            akt_dj { trigger-keys = <D>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
+            akt_kj { trigger-keys = <K>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
+            akt_gj { trigger-keys = <G>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
+        };
 
         hmr_magic: hmr_magic {
             compatible = "zmk,behavior-hold-tap";
             label = "HMR";
             bindings = <&kp>, <&magic_key>;
-
             #binding-cells = <2>;
             flavor = "balanced";
             require-prior-idle-ms = <175>;
@@ -108,18 +120,7 @@
             bindings = <&kp SV_ASTERISK>, <&kp SV_CARET>;
         };
 
-        magic_key: magic_key {
-            compatible = "zmk,behavior-adaptive-key";
-            #binding-cells = <0>;
-            bindings = <&none>;
-            akt_ph { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp H>;};
-            akt_ox { trigger-keys = <O>; max-prior-idle-ms = <300>; bindings = <&kp X>;};
-            akt_sc { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp C>;};
-            akt_tj { trigger-keys = <T>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
-            akt_dj { trigger-keys = <D>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
-            akt_kj { trigger-keys = <K>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
-            akt_gj { trigger-keys = <G>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
-        };
+
     };
 
     keymap {
