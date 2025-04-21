@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/joelspadin
     - name: urob
       url-base: https://github.com/urob
+    - name: ssbb
+      url-base: https://github.com/ssbb
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -22,5 +24,8 @@ manifest:
     - name: zmk-adaptive-key
       remote: urob
       revision: v0.2
+    - name: zmk-antecedent-morph
+      remote: ssbb
+      revision: v1
   self:
     path: config

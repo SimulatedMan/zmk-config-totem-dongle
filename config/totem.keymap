@@ -54,8 +54,8 @@
     behaviors {
         apostraphe_double_quotes: apostraphe_double_quotes {
             compatible = "zmk,behavior-tap-dance";
-            label = "APOSTRAPHE_DOUBLE_QUOTES";
             #binding-cells = <0>;
+            tapping-term-ms = <200>;
             bindings = <&kp SV_APOSTROPHE>, <&kp SV_DOUBLE_QUOTES>;
         };
 
@@ -89,23 +89,31 @@
 
         mult_caret: mult_caret {
             compatible = "zmk,behavior-tap-dance";
-            label = "MULT_CARET";
             #binding-cells = <0>;
+            tapping-term-ms = <200>;
             bindings = <&kp SV_ASTERISK>, <&kp SV_CARET>;
         };
 
-        magic_key: magic_key {
-            combatible = "zmk, behavior-adaptive-key";
+        ad_e: adaptive_e {
+            combatible: "zmk,behavior-antecedent-morph";
             #binding-cells = <0>;
-            bindings = <&none>;
-            akt_ph { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp H>;};
-            akt_ox { trigger-keys = <O>; max-prior-idle-ms = <300>; bindings = <&kp X>;};
-            akt_sc { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp C>;};
-            akt_tj { trigger-keys = <T>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
-            akt_dj { trigger-keys = <D>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
-            akt_kj { trigger-keys = <K>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
-            akt_gj { trigger-keys = <G>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
+            defaults: <&kp E>;
+            bindings= <&kp H>, <&kp X>, <&kp C>, <&kp J>, <&kp J>, <&kp J>, <&kp J>;
+            antecedents = <P O S T D K G>;
+            max-delay-ms = <250>;
         };
+       // magic_key: magic_key {
+        //    combatible = "zmk, behavior-adaptive-key";
+        //    #binding-cells = <0>;
+        //    bindings = <&none>;
+       //     akt_ph { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp H>;};
+       //     akt_ox { trigger-keys = <O>; max-prior-idle-ms = <300>; bindings = <&kp X>;};
+       //     akt_sc { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp C>;};
+       //     akt_tj { trigger-keys = <T>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
+      //      akt_dj { trigger-keys = <D>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
+      //      akt_kj { trigger-keys = <K>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
+      //      akt_gj { trigger-keys = <G>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
+      //  };
     };
 
     keymap {
@@ -132,7 +140,7 @@
             bindings = <
                 &kp Y  &kp C            &kp L                &kp M            &kp K        &kp Z          &kp F             &kp U                        &kp SV_A_UMLAUT            &kp SV_O_UMLAUT
                 &kp I  &kp S            &kp R                &kp T            &kp G        &kp P          &kp N             &kp E                        &kp A                      &kp O
-&kp LEFT_SHIFT  &kp Q  &hml LEFT_WIN V  &hml LEFT_CONTROL W  &hml LEFT_ALT D  &kp J        &kp B          &hmr RIGHT_ALT H  &magic_key &hmr RIGHT_WIN SV_A_RING   &kp X  &kp RIGHT_SHIFT
+&kp LEFT_SHIFT  &kp Q  &hml LEFT_WIN V  &hml LEFT_CONTROL W  &hml LEFT_ALT D  &kp J        &kp B          &hmr RIGHT_ALT H  &ad_e                        &hmr RIGHT_WIN SV_A_RING   &kp X           &kp RIGHT_SHIFT
                                         &kp TAB              &mo 1            &kp SPACE    &kp BACKSPACE  &mo 2             &kp RET
             >;
         };
