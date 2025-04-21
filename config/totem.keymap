@@ -105,7 +105,7 @@
             akt_dj { trigger-keys = <D>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
             akt_kj { trigger-keys = <K>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
             akt_gj { trigger-keys = <G>; max-prior-idle-ms = <300>; bindings = <&kp J>;};
-        }
+        };
     };
 
     keymap {
