@@ -90,7 +90,7 @@
         magic_key: magic_key {
             compatible = "zmk,behavior-adaptive-key";
             #binding-cells = <0>;
-            bindings = <&none;
+            bindings = <&none>;
             akt_ph { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp H>;};
             akt_ox { trigger-keys = <O>; max-prior-idle-ms = <300>; bindings = <&kp X>;};
             akt_sc { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp C>;};
