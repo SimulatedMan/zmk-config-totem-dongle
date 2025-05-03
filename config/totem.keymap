@@ -203,14 +203,14 @@
         //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
         //             ┃    F10    ┃     F1    ┃     F2    ┃     F3    ┃   TRANS   ┃   ┃   TRANS   ┃    ESC    ┃   TRANS   ┃   TRANS   ┃   TRANS   ┃
         // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-        // ┃LEFT_SHIFT ┃   TRANS   ┃  F4 LWIN  ┃  F5 LCTRL ┃  F6 LALT  ┃   TRANS   ┃   ┃   TRANS   ┃   TRANS   ┃   TRANS   ┃   TRANS   ┃   TRANS   ┃RIGHT_SHIFT┃
+        // ┃LEFT_SHIFT ┃   TRANS   ┃  F4 LWIN  ┃  F5 LCTRL ┃  F6 LALT  ┃   TRANS   ┃   ┃   TRANS   ┃   TRANS   ┃     §     ┃   TRANS   ┃   TRANS   ┃RIGHT_SHIFT┃
         // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
         //                                     ┃   TRANS   ┃   TRANS   ┃   TRANS   ┃   ┃   TRANS   ┃   TRANS   ┃   TRANS   ┃
         //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
             bindings = <
         &trans   &kp F7            &kp F8                &kp F9            &trans    &ind_bat &trans      &trans                   &trans            &out OUT_BLE
         &kp F10  &kp F1            &kp F2                &kp F3            &trans    &trans   &kp ESCAPE  &trans                   &trans            &trans
-&trans  &trans   &hml LEFT_GUI F4  &hml LEFT_CONTROL F5  &hml LEFT_ALT F6  &trans    &trans   &trans      &trans                   &trans            &trans        &trans
+&trans  &trans   &hml LEFT_GUI F4  &hml LEFT_CONTROL F5  &hml LEFT_ALT F6  &trans    &trans   &trans      &kp SV_SECT              &trans            &trans        &trans
                                    &trans                &trans            &trans    &trans   &trans      &trans
             >;
         };
