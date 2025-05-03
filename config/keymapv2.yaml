@@ -1,0 +1,168 @@
+layout: {zmk_keyboard: totem}
+layers:
+  BASE:
+  - Y
+  - C
+  - L
+  - M
+  - K
+  - Z
+  - F
+  - 'Magic'
+  - Ä
+  - Ö
+  - I
+  - S
+  - R
+  - T
+  - G
+  - P
+  - N
+  - E
+  - A
+  - O
+  - LEFT SHIFT
+  - Q
+  - {t: V, h: LEFT WIN}
+  - {t: W, h: LEFT CTRL}
+  - {t: D, h: LEFT ALT}
+  - J
+  - B
+  - {t: H, h: RIGHT ALT}
+  - {t: U, h: RIGHT CTRL}
+  - {t: Å, h: RIGHT WIN}
+  - X
+  - RIGHT SHIFT
+  - TAB
+  - SYMBOLS
+  - SPACE
+  - BCKSP
+  - NAVNUM
+  - RET
+  SYMBOLS:
+  - ESCAPE
+  - '\'
+  - "' or \""
+  - '/'
+  - '{'
+  - '}'
+  - '+'
+  - '* or ^'
+  - '%'
+  - DELETE
+  - '!'
+  - '?'
+  - ','
+  - '.'
+  - '('
+  - ')'
+  - '-'
+  - ':'
+  - ';'
+  - '='
+  - {t: ▽, type: trans}
+  - '~'
+  - {t: '<', h: LEFT WIN}
+  - {t: '|', h: LEFT CTRL}
+  - {t: '>', h: LEFT ALT}
+  - '['
+  - ']'
+  - {t: '_', h: RIGHT ALT}
+  - {t: '&', h: RIGHT CTRL}
+  - {t: '@', h: RIGHT WIN}
+  - '#'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  NAVNUM:
+  - '*'
+  - '7'
+  - '8'
+  - '9'
+  - "+"
+  - HOME
+  - PAGE DOWN
+  - PAGE UP
+  - END
+  - {t: ▽, type: trans}
+  - 0
+  - 1
+  - 2
+  - 3
+  - '='
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
+  - '.'
+  - {t: ▽, type: trans}
+  - '/'
+  - {t: 4, h: LEFT WIN}
+  - {t: 5, h: LEFT CTRL}
+  - {t: 6, h: LEFT ALT}
+  - '-'
+  - INS
+  - {t: $, h: RIGHT ALT}
+  - {t: £, h: RIGHT CTRL}
+  - {t: €, h: RIGHT WIN}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  Both:
+  - {t: ▽, type: trans}
+  - F7
+  - F8
+  - F9
+  - {t: ▽, type: trans}
+  - 'BAT STS'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - OUT BLE
+  - F10
+  - F1
+  - F2
+  - F3
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ESCAPE
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: F4, h: LEFT GUI}
+  - {t: F5, h: LEFT CTRL}
+  - {t: F6, h: LEFT ALT}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - §
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+combos:
+- p: [1, 2]
+  k: '`'
+  l: [SYMBOLS]
+- p: [2, 3]
+  k: '´'
+  l: [SYMBOLS]
+- p: [16, 17]
+  k: ESCAPE
+  l: [NAVNUM]

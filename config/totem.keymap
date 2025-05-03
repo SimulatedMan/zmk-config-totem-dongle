@@ -55,7 +55,7 @@
         apostraphe_double_quotes: apostraphe_double_quotes {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             bindings = <&kp SV_APOSTROPHE>, <&kp SV_DOUBLE_QUOTES>;
         };
 
@@ -103,7 +103,7 @@
         mult_caret: mult_caret {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             bindings = <&kp SV_ASTERISK>, <&kp SV_CARET>;
         };
 
